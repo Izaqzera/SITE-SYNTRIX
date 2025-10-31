@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: syntrix-landing
+    runtime: node
+    buildCommand: corepack enable && corepack prepare pnpm@latest --activate && pnpm install && pnpm build
+    startCommand: node dist/index.js
+    envVars:
+      - key: NODE_VERSION
+        value: 22
